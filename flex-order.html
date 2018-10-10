@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        main {
+            display: flex;
+            flex-direction: column;
+        }
+        section {
+            width: 400px;
+            height: 200px;
+            background-color: yellowgreen;
+            border: 4px solid darkgoldenrod;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <section class="s1">1</section>
+    <section class="s2">2</section>
+    <section class="s3">3</section>
+</main>
+<footer>
+    <span>输入s1的order</span><input type="number">
+    <span>输入s2的order</span><input type="number">
+    <span>输入s3的order</span><input type="number">
+</footer>
+<script>
+    document.querySelectorAll('footer input').forEach((item, index) => {
+      item.oninput = function (e) {
+        document.querySelector(`.s${index+1}`).style.order = e.target.value;
+      }
+
+    })
+</script>
+</body>
+</html>
